@@ -5,7 +5,7 @@
   <p>
     <%= food.name %>
     <%= food.measurement_unit %>
-    " '$'#{<%= food.price %>}"  
+    <span> $ <%= food.price %> </span>
     <%= link_to "Delete", user_food_path(current_user.id, food), method: :delete, data: { confirm: "Are you sure?" } %>
   </p>
 <% end %>
