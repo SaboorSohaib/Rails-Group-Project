@@ -1,7 +1,7 @@
 <div>
-    <div>
-        <%= link_to 'Back', user_recipes_path(current_user) %>      
-    </div>
+  <div>
+    <%= link_to 'Back', user_recipes_path(current_user) %>      
+  </div>
   <h3>Create a new recipe</h3>
   <%= form_with model: @recipe, url: user_recipes_path do |f| %>
     <div>

@@ -1,0 +1,40 @@
+<div>
+  <div>
+    <%= link_to 'Back', user_recipes_path(current_user) %>      
+  </div>
+  <div>
+    <h1><%= @recipe.name %></h1>
+    <div>Preparation Time: <%= @recipe.preparation_time %> hours(s)</div>
+    <div>Public: <%= @recipe.public %></div>
+    <div>Cooking Time: <%= @recipe.cooking_time %> hours(s)</div>
+    <div>Steps to go here...</div>
+  </div>
+
+  <div>
+    <button>Generate General Shopping List</button>
+    <button>Add Intgrediend </button>
+  </div>
+
+  <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Quantity</th>
+                    <th>Value</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @foods.each do |food| %>
+                    <tr>
+                        <td><%= food.name %></td>
+                        <td><%= food.price %></td>
+                        <td><%= food.quantity %> <%= food.measurement_unit %></td>
+                        <td><%= button_to("Delete", user_food_path(food.id), method: :delete)%></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    <div>
+</div>
