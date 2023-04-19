@@ -2,7 +2,7 @@
 
 <ul>
 
-  <% @public_recipes.each do |recipe| %>
+  <% @index.each do |recipe| %>
   <%= link_to user_recipe_path(recipe.user, recipe) do%>
     <li>
       <div id="<%= dom_id recipe %>">
