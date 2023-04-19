@@ -1,0 +1,12 @@
+<h1>Foods#index</h1>
+<p>Find me in app/views/foods/index.html.erb</p>
+<%= link_to "New Food", new_user_food_path %>
+<% @foods.each do |food| %>
+  <p>
+    <%= food.name %>
+    <%= food.measurement_unit %>
+    <strong> $ </strong> <%= food.price %> 
+    <%= link_to "Delete", user_food_path(current_user.id, food), method: :delete, data: { confirm: "Are you sure?" } %>
+  </p>
+<% end %>
+
