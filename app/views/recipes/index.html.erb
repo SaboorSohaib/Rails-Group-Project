@@ -1,0 +1,18 @@
+<div>
+    <%= link_to 'Add New Recipe', new_user_recipe_path %>
+    <%if @recipes.any? %>
+        <div>
+        <% @recipes.each do |recipe| %>
+            <div>
+                <%= link_to recipe.name, user_recipe_path(current_user, recipe), method: :get %>
+                <%= button_to 'Remove', user_recipe_path(current_user, recipe), method: :delete %>
+            </div>
+            <div>
+                <p><%= recipe.description %></p>
+            </div>
+        <% end %>
+        </div>
+    <% else %>
+        <p>There are no recipes</p>
+    <% end %>
+</div>
