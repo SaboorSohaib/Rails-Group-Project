@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'public_recipes/index'
   devise_for :users
  
   # devise_scope :user do
@@ -12,4 +13,6 @@ Rails.application.routes.draw do
     resources :recipes, only: [:index, :show, :new, :create, :destroy]
     resources :foods, only: [:index, :show, :new, :create, :destroy]
   end
+  #public recipes route
+  resources :public_recipes, only: [:index]
 end
