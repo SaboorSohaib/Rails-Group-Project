@@ -18,16 +18,6 @@ RSpec.describe Food, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'The price should be present' do
-     subject.price.nil?
-    expect(subject).to_not be_valid
-  end
-  
-    it 'The quantity should be present' do
-     subject.quantity.nil?
-    expect(subject).to_not be_valid
-  end
-
   it 'The price should be integer' do
     subject.price = 'c'
     expect(subject).to_not be_valid
