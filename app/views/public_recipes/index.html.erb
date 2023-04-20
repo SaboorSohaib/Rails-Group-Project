@@ -1,0 +1,41 @@
+<h1>Public Recipes</h1>
+
+<ul>
+
+  <% @index.each do |recipe| %>
+  <%= link_to user_recipe_path(recipe.user, recipe) do%>
+    <li>
+      <div id="<%= dom_id recipe %>">
+ 
+        <div>
+              <h2>
+                <%= recipe.name %> <br>
+                <span>
+                  By: 
+                  <%= recipe.user.name %>
+                </span>
+              </h2>
+        </div>
+
+      </div>
+
+
+        <div>
+          <div>
+            <span>Total food items: <%= recipe.recipe_foods.count %> </span>
+          </div>
+          <div>
+            <span>Total price:            
+            <%= recipe.total_price %></span>
+          </div>
+      </div>
+      <br>
+    
+    </li>
+    <% end %>
+    
+  <% end %>
+
+</ul>
+
+</div>
