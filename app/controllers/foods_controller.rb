@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
   before_action :set_user, only: %i[index show create]
 
   def index
-    @foods = Food.all
+    @foods = Food.where(user_id: params[:user_id])
   end
 
   def show
