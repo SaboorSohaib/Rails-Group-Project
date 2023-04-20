@@ -1,0 +1,33 @@
+<%=link_to "Back", user_recipe_path(current_user, params[:recipe_id])%>
+<h2> Shooping list </h2>
+<div>
+<p> Amount of food items to buy: 
+    <span>
+        <%=@general_shopping_lists.count %> 
+    </span>
+</p>
+<p> Total value of food needed: 
+    <span>
+        <%= @general_shopping_lists.sum { |general_shopping_list| general_shopping_list[:price] } %> 
+    </span>
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Food</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @general_shopping_lists.each do |item| %>
+            <tr>
+                <td><%= item[:name] %></td>
+                <td><%= item[:quantity] %></td>
+                <td><%= item[:price] %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
