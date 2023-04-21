@@ -1,13 +1,15 @@
 <section class="container">
+<% if user_signed_in? %>
 <%=link_to "Back", user_recipe_path(current_user, params[:recipe_id])%>
+<% end %>
 <h2 class="text-center"> Shooping list </h2>
 <div class="d-flex justify-content-between mb-3 mt-3">
-<p> Amount of food items to buy: 
+<p> <strong> Amount of food items to buy: </strong>
     <span>
         <%=@general_shopping_lists.count %> 
     </span>
 </p>
-<p> Total value of food needed: 
+<p> <strong>Total value of food needed: </strong>
     <span>
         <%= @general_shopping_lists.sum { |general_shopping_list| general_shopping_list[:price] } %> 
     </span>
