@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :foods, only: [:index, :show, :new, :create, :destroy]
     resources :recipes, only: [:index, :show, :new, :create, :destroy] do
       resources :general_shopping_lists, only: [:index]
+      resources :recipe_foods, only: [:new, :edit, :create, :update, :destroy]
     end
     
   end
