@@ -1,6 +1,7 @@
+<section class="container">
 <%=link_to "Back", user_recipe_path(current_user, params[:recipe_id])%>
-<h2> Shooping list </h2>
-<div>
+<h2 class="text-center"> Shooping list </h2>
+<div class="d-flex justify-content-between mb-3 mt-3">
 <p> Amount of food items to buy: 
     <span>
         <%=@general_shopping_lists.count %> 
@@ -12,15 +13,15 @@
     </span>
 </div>
 <div>
-    <table>
-        <thead>
+    <table class="table table-striped table-sm">
+        <thead class="table-secondary">
             <tr>
                 <th>Food</th>
                 <th>Quantity</th>
                 <th>Price</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="table-group-divider">
             <% @general_shopping_lists.each do |item| %>
             <tr>
                 <td><%= item[:name] %></td>
@@ -31,3 +32,4 @@
         </tbody>
     </table>
 </div>
+</section>
