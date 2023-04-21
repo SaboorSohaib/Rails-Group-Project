@@ -1,18 +1,22 @@
-<div>
-    <%= link_to 'Add New Recipe', new_user_recipe_path %>
+<section class="container">
+<div class="d-flex justify-content-end">
+    <%= link_to 'Add New Recipe', new_user_recipe_path, class: "btn btn-primary" %>
+    </div>
     <%if @recipes.any? %>
-        <div>
+        
         <% @recipes.each do |recipe| %>
-            <div>
-                <%= link_to recipe.name, user_recipe_path(current_user, recipe), method: :get %>
-                <%= button_to 'Remove', "/users/#{current_user.id}/recipes/#{recipe.id}", method: :delete %>
+        <div class="row border border-0 mt-4 shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="d-flex flex-column col" >
+                <%= link_to recipe.name, user_recipe_path(current_user, recipe), method: :get, class: "text-decoration-none text-black fs-2 fw-bold flex-grow-1" %>
+                <p><%= link_to 'Remove', "/users/#{current_user.id}/recipes/#{recipe.id}", method: :delete %> </p>
             </div>
-            <div>
-                <p><%= recipe.description %></p>
+            <div class="col-8">
+                <p class="flex-grow-1"><%= recipe.description %></p>
             </div>
-        <% end %>
         </div>
+        <% end %>
+        
     <% else %>
         <p>There are no recipes</p>
     <% end %>
-</div>
+</section>
