@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   #   root to: 'devise/sessions#new'
   # end
   
-  root to: 'users#index'
+  #root to: 'users#index'
   resources :users, only: [:index, :show] do
     resources :foods, only: [:index, :show, :new, :create, :destroy]
     resources :recipes, only: [:index, :show, :new, :create, :destroy] do
@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   end
   #public recipes route
   resources :public_recipes, only: [:index]
+  root to: "public_recipes#index"
 end
