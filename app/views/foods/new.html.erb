@@ -1,20 +1,26 @@
-<section class="sign container flex">
-<div class= "menu">
-<%= link_to "Back to foods", user_foods_path %>
-</div>
-<h1> Create new food </h1>
+<section class="container">
 
-<%= form_with model: @food, url: user_foods_path do |f| %>
-  <div class='field flex'>
-    <%= f.text_field :name, placeholder:"Name" %> <br/>
+<div class=" mx-auto d-flex flex-column justify-content-center align-items-center p-3 m bg-secondary", style= "width: 60%" >
+<h1 class="text-center"> Create new food </h1>
+
+<%= form_with model: @food, url: user_foods_path, class: "w-100" do |f| %>
+  <div class="form-group mt-3">
+    <%= f.text_field :name, placeholder:"Name", class: "w-100 form-control" %> <br/>
     
-    <%= f.text_field :measurement_unit, placeholder:"Measurement unit" %> <br/>
+    <%= f.text_field :measurement_unit, placeholder:"Measurement unit", class: "w-100 form-control" %> <br/>
  
-    <%= f.number_field :price, placeholder:"Price" %> <br/>
+    <%= f.number_field :price, placeholder:"Price", class: "w-100 form-control" %> <br/>
    
-    <%= f.number_field :quantity, placeholder:"Quantity" %> <br/>
-    <%= f.submit%>
+    <%= f.number_field :quantity, placeholder:"Quantity", class: "w-100 form-control" %> <br/>
+    <div class= "d-flex justify-content-center gap-3 mt-3">
+      <%= link_to "Cancel", user_foods_path, class: "btn btn-danger p-2" %>
+      <%= f.submit class: "p-2 btn btn-primary" %>
     </div>
+</div>
+    
+   </div>
 <% end %>
+
+</div>
 
 </section>
