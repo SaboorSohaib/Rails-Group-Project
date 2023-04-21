@@ -1,5 +1,7 @@
 <section class="container">
+<div class="d-flex justify-content-end">
     <%= link_to 'Add New Recipe', new_user_recipe_path, class: "btn btn-primary" %>
+    </div>
     <%if @recipes.any? %>
         
         <% @recipes.each do |recipe| %>
