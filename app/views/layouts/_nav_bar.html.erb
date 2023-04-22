@@ -12,9 +12,12 @@
           <%= link_to user_foods_path(current_user.id), class:"text-decoration-none", method: :get do %>  
           <span class="nav-link active text-decoration-none", aria-current="page"> Foods </span>
           <% end %>
-        </li>
+        </li> |
         <li class="nav-item">
           <%= link_to "Recipe", user_recipes_path(current_user.id), method: :get, class:"nav-link" %>
+        </li> |
+        <li class="nav-item">
+          <%= link_to "Public Recipes", public_recipes_path(current_user.id), method: :get, class:"nav-link" %>
         </li>
       <% end %>
       </ul>

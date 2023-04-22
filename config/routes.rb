@@ -2,9 +2,9 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  # devise_scope :user do
-  #   root to: 'devise/sessions#new'
-  # end
+  devise_scope :user do
+    root to: 'devise/sessions#new'
+  end
   
   #root to: 'users#index'
   resources :users, only: [:index, :show] do
@@ -17,5 +17,4 @@ Rails.application.routes.draw do
   end
   #public recipes route
   resources :public_recipes, only: [:index]
-  root to: "public_recipes#index"
 end

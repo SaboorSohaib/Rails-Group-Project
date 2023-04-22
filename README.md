@@ -100,8 +100,10 @@ Clone this repository to your desired folder:
 ### Usage
 
 To run the project, execute the following command:
-
-- rails server.
+ 
+- rails db:create
+- rails db:migrate 
+- rails server
 
 ### Run tests
 
