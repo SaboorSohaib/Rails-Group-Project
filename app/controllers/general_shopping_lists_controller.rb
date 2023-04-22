@@ -16,6 +16,5 @@ class GeneralShoppingListsController < ApplicationController
       }
     end
 
-    # @total_price = @general_shopping_lists.sum { |general_shopping_list| general_shopping_list[:price] }
   end
 end

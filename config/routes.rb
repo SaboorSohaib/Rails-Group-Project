@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'public_recipes/index'
   devise_for :users
- 
   # devise_scope :user do
   #   root to: 'devise/sessions#new'
   # end
