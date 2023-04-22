@@ -1,12 +1,13 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.where(user_id: current_user.id)
+    @recipes = Recipe.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   def show
     @user = User.find(params[:user_id])
     @recipe = Recipe.find(params[:id])
     @foods = Food.all
+    @recipe_foods = @recipe.recipe_foods.includes(:food, :recipe).order(:id)
   end
 
   def new
@@ -17,7 +18,7 @@ class RecipesController < ApplicationController
     @user = current_user
     @recipe = @user.recipes.new(recipe_params)
     if @recipe.save
-      redirect_to user_recipe_path(@user, @recipe)
+      redirect_to user_recipes_path(@user, @recipe)
     else
       render :new, alert: "Couldn't create recipe for user"
     end
