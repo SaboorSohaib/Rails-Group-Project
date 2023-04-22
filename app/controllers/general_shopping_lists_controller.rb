@@ -15,6 +15,5 @@ class GeneralShoppingListsController < ApplicationController
         price: missing_food.food.price * (missing_food.quantity - missing_food.food.quantity)
       }
     end
-
   end
 end
