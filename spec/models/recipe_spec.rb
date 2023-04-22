@@ -10,32 +10,32 @@ RSpec.describe Recipe, type: :model do
   before(:each) { subject.save }
 
   it 'The name should be present' do
-    subject.name.nil?
+    subject.name = nil
     expect(subject).to_not be_valid
   end
 
   it 'The preparation_time should be present' do
-    subject.preparation_time.nil?
+    subject.preparation_time = nil
     expect(subject).to_not be_valid
   end
 
   it 'The cooking_time should be present' do
-    subject.cooking_time.nil?
+    subject.cooking_time = nil
     expect(subject).to_not be_valid
   end
 
   it 'The description should be present' do
-    subject.description.nil?
+    subject.description = nil
     expect(subject).to_not be_valid
   end
 
   it 'The preparation_time should be integer' do
-    subject.price = 'c'
+    subject.preparation_time = 'c'
     expect(subject).to_not be_valid
   end
 
   it 'The cooking_time should be integer' do
-    subject.quantity = 'a'
+    subject.cooking_time = 'a'
     expect(subject).to_not be_valid
   end
 end
